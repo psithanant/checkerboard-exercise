@@ -1,16 +1,20 @@
 // Your JS goes here
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * letters.length)];
+    }
+    return color;
+}
+
 document.addEventListener("DOMContentLoaded", function(){
   // Handler when the DOM is fully loaded
   var body = document.querySelector('body');
-
   for (var i = 0; i < 108; i++) {
     var div = document.createElement('div');
     body.appendChild(div);
-    if (i % 2 === 1) {
-      div.style["background-color"] = "black";
-    } else {
-      div.style["background-color"] = "red";
-    }
+    div.style["background-color"] = getRandomColor();
     div.style.width = "11.1%";
     div.style.float = "left";
     div.style.paddingBottom = '11.1%';
