@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function(){
     div.style.float = "left";
     div.style.paddingBottom = '11.1%';
   }
+  setInterval(function(){
+    var divs = document.getElementsByTagName('div');
+    for (var i = 0; i < divs.length; i++) {
+      divs[i].style["background-color"] = getRandomColor();
+    }
+  }, 2000);
 });
 
 // Each tile should be a `div`
